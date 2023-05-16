@@ -1,37 +1,21 @@
-#include <iostream>
-#include <utility>
-#include "Node.h"
+#pragma once
 
-Node::Node() : next(nullptr) {
-}
+class Node {
+private:
+  std::string data;
+  Node *next;
+public:
+  Node();
 
-Node::Node(std::string data, Node *next) {
-  this->data = std::move(data);
-  this->next = next;
+  Node(std::string data);
 
-}
+  Node(std::string data, Node *next);
 
-Node::Node(std::string data) {
-  this->data = std::move(data);
-  this->next = nullptr;
-}
+  void setData(std::string data);
 
-void Node::setData(std::string data) {
-  this->data = std::move(data);
-}
+  void setNext(Node *next);
 
-void Node::setNext(Node *next) {
-  this->next = next;
-}
+  std::string getData();
 
-std::string Node::getData() {
-  return this->data;
-}
-
-Node *Node::getNext() {
-  return this->next;
-}
-
-
-
-
+  Node *getNext();
+};
