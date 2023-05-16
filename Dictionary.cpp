@@ -37,3 +37,15 @@ Person *Dictionary::get(std::string name) {
   }
   return nullptr;
 }
+
+std::string Dictionary::allKeys() {
+  std::string res;
+  for (auto &i: table) {
+    if (i != nullptr) {
+      for (int j = 0; j < i->length(); i++) {
+        res += i->get(j)->get_name() + ";";
+      }
+    }
+  }
+  return res;
+}

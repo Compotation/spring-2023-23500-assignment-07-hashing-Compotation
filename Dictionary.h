@@ -18,4 +18,6 @@ public:
   int insert(Person *person);
 
   Person *get(std::string name);
+
+  std::string allKeys();
 };
