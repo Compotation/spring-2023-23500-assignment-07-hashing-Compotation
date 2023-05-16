@@ -5,26 +5,26 @@
 Node::Node() : next(nullptr) {
 }
 
-Node::Node(std::string data, Node *next) {
-  this->data = std::move(data);
+Node::Node(Person *data, Node *next) {
+  this->data = data;
   this->next = next;
 
 }
 
-Node::Node(std::string data) {
-  this->data = std::move(data);
+Node::Node(Person *data) {
+  this->data = data;
   this->next = nullptr;
 }
 
-void Node::setData(std::string data) {
-  this->data = std::move(data);
+void Node::setData(Person *person) {
+  this->data = person;
 }
 
-void Node::setNext(Node *next) {
-  this->next = next;
+void Node::setNext(Node *node) {
+  this->next = node;
 }
 
-std::string Node::getData() {
+Person *Node::getData() {
   return this->data;
 }
 

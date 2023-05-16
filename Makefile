@@ -1,4 +1,4 @@
-OBJECTS = Node.o
+OBJECTS = Node.o Person.o
 CXXFLAGS = -g
 
 all: main.o $(OBJECTS)
@@ -12,7 +12,7 @@ tests: tests.o $(OBJECTS)
 
 main.o: main.cpp Node.h
 
-Node.o: Node.cpp Node.h
+Node.o: Node.cpp Node.h Person.h Person.cpp
 
 Person.o: Person.cpp Person.h
 
