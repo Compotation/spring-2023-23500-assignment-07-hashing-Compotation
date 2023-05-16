@@ -40,14 +40,12 @@ Person *Dictionary::get(std::string name) {
 
 std::string Dictionary::allKeys() {
   std::string res;
-  int numTimes = 0;
   for (int listI = 0; listI < tableSize; listI++) {
     if (table[listI] != nullptr) {
       for (int j = 0; j < table[listI]->length(); j++) {
         res += table[listI]->get(j)->get_name() + ";";
       }
     }
-    numTimes++;
   }
   return res;
 }
