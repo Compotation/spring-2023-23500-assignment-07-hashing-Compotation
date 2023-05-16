@@ -13,4 +13,7 @@ public:
 
   // Use folding on a string, summed 4 bytes at a time
   int sfold(std::string s);
+
+  // returns hash of inserted object
+  int insert(Person *person);
 };

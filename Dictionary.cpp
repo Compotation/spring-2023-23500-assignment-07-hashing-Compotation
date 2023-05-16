@@ -15,3 +15,13 @@ int Dictionary::sfold(std::string s) {
   }
   return (int) (std::abs(sum) % tableSize);
 }
+
+int Dictionary::insert(Person *person) {
+  auto hash = sfold(person->get_name());
+  if (table[hash] == nullptr) {
+    table[hash] = new List();
+  }
+  table[hash]->insert(person);
+
+  return hash;
+}
