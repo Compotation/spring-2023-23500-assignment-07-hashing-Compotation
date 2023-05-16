@@ -1,4 +1,4 @@
-OBJECTS = Node.o Person.o
+OBJECTS = Node.o Person.o List.o
 CXXFLAGS = -g
 
 all: main.o $(OBJECTS)
@@ -15,7 +15,7 @@ main.o: main.cpp Node.h
 Node.o: Node.cpp Node.h Person.h Person.cpp
 
 Person.o: Person.cpp Person.h
-
+List.o: List.h List.cpp Node.h Node.cpp Person.cpp Person.h
 tests.o: tests.cpp doctest.h
 clean:
 	rm -f main tests *.o
