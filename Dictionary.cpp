@@ -25,3 +25,15 @@ int Dictionary::insert(Person *person) {
 
   return hash;
 }
+
+Person *Dictionary::get(std::string name) {
+  auto hash = sfold(name);
+  if (table[hash] != nullptr) {
+    for (int i = 0; i < table[hash]->length(); i++) {
+      if (table[hash]->get(i)->get_name() == name) {
+        return table[hash]->get(i);
+      }
+    }
+  }
+  return nullptr;
+}
