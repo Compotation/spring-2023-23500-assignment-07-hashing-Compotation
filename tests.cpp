@@ -36,6 +36,5 @@ TEST_CASE("get all keys") {
   d1->insert(p1);
   d1->insert(p2);
   d1->insert(p3);
-  std::cout << d1->allKeys() << "\n";
   CHECK_EQ(d1->allKeys(), "Zamansky, Mike;, Ko;Zheng, Bryant;");
 }
